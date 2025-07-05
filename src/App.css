@@ -1,0 +1,72 @@
+.App {
+  min-height: 100vh;         /* Full screen height */
+  width: 100vw;              /* Full screen width */
+  background-color: #e5e7eb; /* Light gray background */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;   /* Center content vertically */
+  padding: 2rem;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+h1 {
+  margin: 0;
+  margin-bottom: 2rem;
+  font-size: 2rem;
+  color: #111827;
+  font-weight: 600;
+}
+
+.color-palette {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(50px, 1fr));
+  gap: 1rem;
+  width: 100%;
+  max-width: 500px;
+  margin-bottom: 2rem;
+}
+
+.color-box {
+  width: 100%;
+  padding-top: 100%; /* Keeps aspect ratio square */
+  position: relative;
+  cursor: pointer;
+  border: 2px solid transparent;
+  /* transition: border-color 0.2s ease; */
+  border-radius: 6px;
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.color-box:hover {
+  border-color: #111827;
+  transform: scale(1.1);
+}
+
+.color-box::after {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-color: currentColor;
+}
+
+/* Custom color picker area */
+.custom-color-picker {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background: #ffffff;
+  border: 2px solid #d1d5db;
+  padding: 1rem 1.5rem;
+  border-radius: 2px;
+}
+
+.custom-color-picker input[type="color"] {
+  border: none;
+  width: 40px;
+  height: 5px;
+  cursor: pointer;
+  padding: 0;
+  background: none;
+}
